@@ -25,7 +25,7 @@ Service.Element = (function (j) {
 			Service.Element.PageLoader.fadeOut(function () {
 				imageFrame1 = j('.image-frame1').imageframe();
 				imageFrame2 = j('.image-frame2').imageframe({
-					interval: 1000,
+					interval: 600,
 					duration: 300
 				});
 			});
