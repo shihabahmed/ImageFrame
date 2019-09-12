@@ -1,28 +1,22 @@
-﻿/// <reference path="imageframe.js" />
-
-
-var Service = {};
 var jWindow, imageFrame1, imageFrame2;
 
-Service.Element = (function (j) {
+var Elements = (function (j) {
 	return {
 		Page: j('.landing-page'),
-		PageLoader: j('.page-loader'),
-		Container: j('.header-content .container')
+		PageLoader: j('.page-loader')
 	}
 })(jQuery);
-
 
 ; (function (j) {
 	j(function () {
 		jWindow = j(window);
 
 		jWindow.load(function () {
-			Service.Element.Page.animate({
+			Elements.Page.animate({
 				'opacity': 1
 			}, 600);
 
-			Service.Element.PageLoader.fadeOut(function () {
+			Elements.PageLoader.fadeOut(function () {
 				imageFrame1 = j('.image-frame1').imageframe();
 				imageFrame2 = j('.image-frame2').imageframe({
 					interval: 600,
@@ -30,10 +24,7 @@ Service.Element = (function (j) {
 				});
 			});
 		}).resize(function () {
-			Service.Element.PageLoader.height(jWindow.height());
+			Elements.PageLoader.height(jWindow.height());
 		}).resize();
 	});
 })(jQuery);
-
-
-
